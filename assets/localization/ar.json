@@ -3,7 +3,7 @@
   "welcome": "مرحباً بك في تطبيقنا!",
   "auth": {
     "register": "إنشاء حساب",
-    "login": "تسجيل دخول",
+    "login": "تسجيل الدخول",
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور",
     "confirm_password": "تأكيد كلمة المرور",
@@ -17,36 +17,53 @@
     "next": "التالي",
     "enter_verification_code": "أدخل رمز التحقق",
     "verify": "تحقق",
-    "resend_otp": "إعادة إرسال رمز التحقق؟",
-    "full_name": "الاسم بالكامل",
-    "create_account": "إنشاء الحساب"
+    "resend_otp": "إعادة إرسال الرمز؟",
+    "full_name": "الاسم الكامل",
+    "create_account": "إنشاء حساب"
   },
   "onboarding": {
-    "trusted_tools": "أدوات موثوقة من أفضل الموردين",
-    "all_in_one": "كل ما تحتاجه من الأدوات في مكان واحد",
-    "continue": "استمرار",
-    "skip": "تخطي"
+    "trusted_tools": "Trusted tools from the best suppliers",
+    "all_in_one": "All the tools you need in one place",
+    "continue": "Continue",
+    "skip": "Skip"
   },
   "cart": {
-    "title": "عربة التسوق",
+    "title": "سلة التسوق",
     "empty": "سلة التسوق فارغة",
     "total": "المجموع",
-    "checkout": "إتمام الشراء",
-    "shipping_info": "بيانات الشحن",
-    "summary": {
-      "subtotal": "المجموع",
-      "delivery": "التوصيل",
-      "tax": "الضرائب و الرسوم",
-      "total": "الإجمالي"
-    },
+    "checkout": "الدفع",
+    "shipping_info": "معلومات الشحن",
+    "shipping": "الشحن",
     "payment": {
+      "title": "الدفع",
       "cash_on_delivery": "الدفع عند الاستلام",
-      "electronic": "الدفع الالكتروني",
+      "electronic": "الدفع الإلكتروني",
       "tabby": "تابي",
-      "tamara": "تمارا"
+      "tamara": "تمارا",
+      "next": "التالي",
+      "pay": "دفع"
     },
-    "quantity": "الكمية : {count}",
-    "proceed_to_payment": "تابع للدفع"
+    "form": {
+      "first_name": "الاسم الأول",
+      "first_name_hint": "أدخل اسمك الأول",
+      "email": "البريد الإلكتروني",
+      "email_hint": "أدخل بريدك الإلكتروني",
+      "street": "عنوان الشارع",
+      "street_hint": "اسم الشارع، رقم المبنى...",
+      "governorate": "المحافظة",
+      "governorate_hint": "مثلاً: الجيزة، الرياض",
+      "area": "المنطقة",
+      "area_hint": "مثلاً: الدقي، النخيل",
+      "phone": "رقم الهاتف",
+      "phone_hint": "أدخل رقم الهاتف"
+    },
+    "summary": {
+      "subtotal": "المجموع الفرعي",
+      "delivery": "التوصيل",
+      "tax": "الضرائب والرسوم",
+      "total": "المجموع الكلي"
+    },
+    "proceed_to_payment": "المتابعة للدفع"
   },
   "product": {
     "details": "تفاصيل المنتج",
@@ -55,76 +72,105 @@
     "description": "الوصف",
     "send": "إرسال",
     "discover_more": "اكتشف المزيد",
-    "upload_file": "رفع الملف",
-    "customer_reviews": "{count} رأي العملاء",
-    "recommendation": "{percent}% من المشتركين أوصى بهذا",
+    "upload_file": "رفع ملف",
+    "customer_reviews": "{count} تقييمات العملاء",
+    "recommendation": "{percent}% من المشتركين أوصوا بهذا",
+    "brand": {
+      "title": "العلامة التجارية",
+      "name": "كهف اند كيه فرينج"
+    },
+    "discount": "خصم {percent}%",
     "rating": {
       "title": "تقييم المنتج",
-      "write_review": "اكتب مراجعة",
+      "write_review": "اكتب تقييماً",
       "great_product": "منتج رائع",
-      "submit": "إرسال"
+      "submit": "إرسال التقييم",
+      "how_is_product": "كيف هو المنتج؟",
+      "review_title": "عنوان المراجعة",
+      "review_title_hint": "منتجات رائعة",
+      "review_content": "مراجعة المحتوى",
+      "review_content_hint": "اكتب محتوى المراجعة هنا..."
     }
   },
   "profile": {
-    "settings": "الإعدادات",
-    "profile": "الملف الشخصي",
-    "faq": "الاسئلة الشائعة",
-    "about_us": "من نحن",
-    "seller_account": "حساب البائع",
-    "contact_us": "تواصل معنا",
-    "change_language": "تغيير اللغة",
-    "who_are_we": "مين مواردي؟",
-    "our_story": "قصتنا"
+    "settings": "Settings",
+    "profile": "Profile",
+    "faq": "FAQ",
+    "about_us": "About Us",
+    "seller_account": "Seller Account",
+    "contact_us": "Contact Us",
+    "change_language": "Change Language",
+    "who_are_we": "Who are we?",
+    "our_story": "Our Story"
   },
   "contact": {
-    "start_project": "ابدأ بتنفيذ مشروعك اليوم",
-    "address": "الرياض، حي الضباط.\nطريق الملك عبد العزيز مبنى",
-    "working_hours": "ساعات العمل",
-    "working_days": "الاحد - الخميس من 9 صباحاً - 5 مساءً",
+    "start_project": "Start your project today",
+    "address": "Riyadh, Al-Dubbat District.\nKing Abdulaziz Road Building",
+    "working_hours": "Working Hours",
+    "working_days": "Sunday - Thursday from 9 AM - 5 PM",
     "phone": "+966 9 9966 0147320",
     "license": "License No: 1906047.01",
-    "leave_message": "اترك رسالة"
+    "leave_message": "Leave a message"
   },
   "orders": {
     "quotation": "عرض السعر",
     "quotation_number": "QTN-2025-001",
-    "company_quotes": "عرض اسعار الشركات",
+    "company_quotes": "عروض الشركات",
     "export": "تصدير",
+    "current_orders": "الطلبات الحالية",
+    "previous_orders": "الطلبات السابقة",
+    "offer_details": "تفاصيل العرض",
+    "accept_offer": "قبول العرض",
+    "reject_offer": "رفض العرض",
+    "validity_period": "مدة صلاحية العرض",
+    "validity_text": "هذا العرض ساري لمدة 7 أيام من تاريخ الإرسال",
+    "directed_to": "موجه إلى:",
+    "company_section": "🏢 شركة {name}",
+    "offer_details_section": "💼 تفاصيل عرض السعر:",
     "table": {
       "product_name": "اسم المنتج",
-      "brand_name": "اسم الماركة",
-      "quantity": "كمية",
+      "brand_name": "اسم العلامة التجارية",
+      "quantity": "الكمية",
       "unit_price": "سعر الوحدة",
-      "total_price": "سعر الاجمالي"
+      "total_price": "السعر الإجمالي"
     },
     "company_info": {
       "name": "اسم الشركة",
       "date": "التاريخ",
-      "phone": "رقم التليفون",
+      "phone": "رقم الهاتف",
       "address": "العنوان",
       "email": "البريد الإلكتروني"
     },
     "location": {
-      "select_location": "اختر الموقع الجغرافي بالقرب منك",
-      "select_company": "اختر المحل أو الشركة",
-      "select_all": "تحديد كل المحلات والشركات"
+      "select_location": "اختر موقعاً قريباً منك",
+      "select_company": "اختر شركة أو متجر",
+      "select_all": "اختيار جميع الشركات والمتاجر",
+      "region": "أدخل المنطقة",
+      "city": "أدخل المدينة",
+      "district": "أدخل الحي",
+      "search_company": "بحث عن الشركة أو محل"
+    },
+    "upload": {
+      "title": "رفع الملف",
+      "description": "و سنقدم لك كل ما تحتاجه بافضل الاسعار!",
+      "button": "رفع الملف"
     }
   },
   "errors": {
-    "generic": "خطأ: {error}"
+    "generic": "Error: {error}"
   },
   "navigation": {
-    "home": "الرئيسية",
-    "building_materials": "مواد البناء",
-    "orders": "الطلبات",
-    "cart": "العربة",
-    "settings": "الإعدادات"
+    "home": "Home",
+    "building_materials": "Building Materials",
+    "orders": "Orders",
+    "cart": "Cart",
+    "settings": "Settings"
   },
   "home": {
-    "shop_by_category": "التسوق حسب الفئة",
-    "expansion_opportunity": "فرصتك للتوسع تبدأ من هنا!",
-    "supplier_prompt": "اذا كنت مورد-اضف منتجاتك الان و ابدا البيع في دقائق",
-    "plumbing_tools": "ادوات السباكة",
-    "plumbing_subtitle": "أفضل الأدوات لتجهيز سباكة منزلك"
+    "shop_by_category": "Shop by Category",
+    "expansion_opportunity": "Your expansion opportunity starts here!",
+    "supplier_prompt": "If you're a supplier - add your products now and start selling in minutes",
+    "plumbing_tools": "Plumbing Tools",
+    "plumbing_subtitle": "Best tools for your home plumbing setup"
   }
 }

@@ -29,19 +29,19 @@ class _UploadFileScreenState extends State<UploadFileScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
+        title: Text('orders.upload.title'.tr()),
         centerTitle: true,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          UploadCard(),
+          const UploadCard(),
           const SizedBox(height: 24),
           Text('orders.location.select_location'.tr()),
           const SizedBox(height: 8),
           DropdownButtonFormField<String>(
             decoration: InputDecoration(
-              labelText: "أدخل المنطقة",
+              labelText: 'orders.location.region'.tr(),
               border: border,
             ),
             value: selectedRegion,
@@ -53,7 +53,7 @@ class _UploadFileScreenState extends State<UploadFileScreen> {
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
             decoration: InputDecoration(
-              labelText: "أدخل المدينة",
+              labelText: 'orders.location.city'.tr(),
               border: border,
             ),
             value: selectedCity,
@@ -65,7 +65,7 @@ class _UploadFileScreenState extends State<UploadFileScreen> {
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
             decoration: InputDecoration(
-              labelText: "أدخل الحي",
+              labelText: 'orders.location.district'.tr(),
               border: border,
             ),
             value: selectedDistrict,
@@ -80,7 +80,7 @@ class _UploadFileScreenState extends State<UploadFileScreen> {
           TextField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.search),
-              hintText: "بحث عن الشركة أو محل",
+              hintText: 'orders.location.search_company'.tr(),
               border: border,
             ),
           ),

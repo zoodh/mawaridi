@@ -82,8 +82,7 @@ class _LoginAppBar extends ConsumerWidget {
     final currentPage = ref.watch(currentPageProvider);
     
     return AppBar(
-      title: const Text('تسجيل الدخول'),
-      centerTitle: true,
+title: Text('auth.login'.tr()),      centerTitle: true,
       leading: currentPage == 1
           ? IconButton(
               icon: const Icon(Icons.arrow_back),
@@ -133,14 +132,14 @@ class PhoneInputPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
-            'مرحبا',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          Text(
+            'hello'.tr(),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
-          const Text(
-            'يرجى ادخال رقم هاتفك المحمول',
-            style: TextStyle(fontSize: 14),
+          Text(
+            'auth.enter_phone'.tr(),
+            style: const TextStyle(fontSize: 14),
           ),
           const SizedBox(height: 32),
           _PhoneInput(),
@@ -154,7 +153,7 @@ class PhoneInputPage extends StatelessWidget {
                   curve: Curves.easeInOut,
                 );
               },
-              child: const Text('التالي'),
+              child: Text('auth.next'.tr()),
             ),
           ),
         ],
@@ -191,8 +190,8 @@ class _PhoneInput extends StatelessWidget {
           Expanded(
             child: TextFormField(
               keyboardType: TextInputType.phone,
-              decoration: const InputDecoration(
-                hintText: 'رقم الهاتف',
+              decoration: InputDecoration(
+                hintText: 'auth.phone_number'.tr(),
                 border: InputBorder.none,
               ),
               maxLength: 9,
@@ -219,7 +218,7 @@ class OtpPage extends StatelessWidget {
         children: [
           const SizedBox(height: 24),
           Text(
-            tr('auth.verify'),
+            'auth.enter_verification_code'.tr(),
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 32),
@@ -232,7 +231,7 @@ class OtpPage extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: StylizedButton(
-              text: 'تحقق',
+              text: 'auth.verify'.tr(),
               buttonColor: Theme.of(context).primaryColor,
               textColor: Colors.white,
               function: () => context.goNamed(AppRoute.home.name),
@@ -243,7 +242,7 @@ class OtpPage extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {},
-                child: Text(tr('auth.resend_otp')),
+                child: Text('auth.resend_otp'.tr()),
               ),
             ],
           )

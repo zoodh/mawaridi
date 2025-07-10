@@ -1,14 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../logic/providers/quantity_provider.dart';
 
 class QuantitySelectorWithDiscount extends ConsumerWidget {
-
-  const QuantitySelectorWithDiscount({
-    super.key
-  });
+  const QuantitySelectorWithDiscount({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,23 +17,24 @@ class QuantitySelectorWithDiscount extends ConsumerWidget {
       children: [
         Expanded(
           child: Column(
-            children: const [
+            children: [
               Text(
-                "العلامة التجارية",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                'product.brand.title'.tr(),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18
+                ),
               ),
               Text(
-                "كهف اند كيه فرينج",
-                style: TextStyle(fontSize: 14),
+                'product.brand.name'.tr(),
+                style: const TextStyle(fontSize: 14),
               ),
             ],
           ),
         ),
-        const Text(
-          "خصم %20",
-          style: TextStyle(
+        Text(
+          'product.discount'.tr(args: ['20']),
+          style: const TextStyle(
             color: Colors.red,
             fontWeight: FontWeight.bold,
           ),
@@ -75,6 +74,5 @@ class QuantitySelectorWithDiscount extends ConsumerWidget {
       ],
     );
   }
-
 }
 

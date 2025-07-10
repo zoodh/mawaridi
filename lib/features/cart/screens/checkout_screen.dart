@@ -8,15 +8,13 @@ import 'package:mawaridii/features/cart/logic/next_step_provider.dart';
 import 'package:mawaridii/routes/routes.dart';
 
 import '../../../app/widgets/stylized_filled_button.dart';
+
 class CheckOutScreen extends ConsumerWidget {
   const CheckOutScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final primaryColor = Theme
-        .of(context)
-        .primaryColor;
-
+    final primaryColor = Theme.of(context).primaryColor;
     final bool isNextStep = ref.watch(nextStepProvider);
 
     return Scaffold(
@@ -28,76 +26,88 @@ class CheckOutScreen extends ConsumerWidget {
         child: Column(
           children: [
             const SizedBox(height: 16),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Text(
-                    "الشحن",
-                    style: TextStyle(color: Colors.white),
+                  child: Text(
+                    'cart.shipping'.tr(),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
-
                 Container(
                   width: 40,
                   height: 2,
                   color: Colors.grey.shade400,
                 ),
-
                 Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   decoration: BoxDecoration(
                     color: isNextStep ? primaryColor : Colors.grey.shade400,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Text(
-                    "الدفع",
-                    style: TextStyle(color: Colors.white),
+                  child: Text(
+                    'cart.payment.title'.tr(),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ],
             ),
-
             const SizedBox(height: 24),
-
-            !isNextStep ?
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
-                  children: List.generate(_formFields.length, (index) {
-                    final field = _formFields[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: _buildLabeledTextField(field['label']!, field['hint']!),
-                    );
-                  }),
-                ),
-              )
-            : Column(
-              children: [
-                PaymentOptionsWidget()
-              ],
-            ),
-
-
+            !isNextStep
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Column(
+                      children: [
+                        _buildLabeledTextField(
+                          'cart.form.first_name'.tr(),
+                          'cart.form.first_name_hint'.tr(),
+                        ),
+                        const SizedBox(height: 12),
+                        _buildLabeledTextField(
+                          'cart.form.email'.tr(),
+                          'cart.form.email_hint'.tr(),
+                        ),
+                        const SizedBox(height: 12),
+                        _buildLabeledTextField(
+                          'cart.form.street'.tr(),
+                          'cart.form.street_hint'.tr(),
+                        ),
+                        const SizedBox(height: 12),
+                        _buildLabeledTextField(
+                          'cart.form.governorate'.tr(),
+                          'cart.form.governorate_hint'.tr(),
+                        ),
+                        const SizedBox(height: 12),
+                        _buildLabeledTextField(
+                          'cart.form.area'.tr(),
+                          'cart.form.area_hint'.tr(),
+                        ),
+                        const SizedBox(height: 12),
+                        _buildLabeledTextField(
+                          'cart.form.phone'.tr(),
+                          'cart.form.phone_hint'.tr(),
+                        ),
+                      ],
+                    ),
+                  )
+                : const Column(
+                    children: [
+                      PaymentOptionsWidget(),
+                    ],
+                  ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
               child: StylizedButton(
-                text: isNextStep ? "الدفع" : "التالي",
+                text: isNextStep ? 'cart.payment.pay'.tr() : 'cart.payment.next'.tr(),
                 function: () {
                   if (!isNextStep) {
-                    ref
-                        .read(nextStepProvider.notifier)
-                        .state = true;
+                    ref.read(nextStepProvider.notifier).state = true;
                   } else {
                     context.goNamed(AppRoute.home.name);
                   }
@@ -112,7 +122,6 @@ class CheckOutScreen extends ConsumerWidget {
     );
   }
 
-  /// Helper to build labeled text fields
   Widget _buildLabeledTextField(String label, String hint) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,16 +141,6 @@ class CheckOutScreen extends ConsumerWidget {
     );
   }
 }
-
-
-      final List<Map<String, String>> _formFields = [
-{"label": "الاسم الأول", "hint": "أدخل اسمك الأول"},
-{"label": "البريد الإلكتروني", "hint": "أدخل بريدك الإلكتروني"},
-{"label": "عنوان الشارع", "hint": "اسم الشارع، رقم المبنى..."},
-{"label": "المحافظة", "hint": "مثلاً: الجيزة، الرياض"},
-{"label": "المنطقة", "hint": "مثلاً: الدقي، النخيل"},
-{"label": "رقم الهاتف", "hint": "أدخل رقم الهاتف"},
-];
 
 
 class PaymentOptionsWidget extends StatefulWidget {

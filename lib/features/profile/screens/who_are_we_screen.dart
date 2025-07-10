@@ -34,7 +34,7 @@ class WhoAreWeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("assets/images/about_1.png", fit: BoxFit.cover),
+            Image.asset("assets/images/about-us-1.png", fit: BoxFit.cover),
             const SizedBox(height: 16),
             Text('profile.who_are_we'.tr(), style: subheadingStyle, textAlign: TextAlign.right),
             const SizedBox(height: 8),
@@ -44,7 +44,7 @@ class WhoAreWeScreen extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
             const SizedBox(height: 24),
-            Image.asset("assets/images/about_2.png", fit: BoxFit.cover),
+            Image.asset("assets/images/about-us-2.png", fit: BoxFit.cover),
             const SizedBox(height: 16),
             Text('profile.our_story'.tr(), style: subheadingStyle, textAlign: TextAlign.right),
             const SizedBox(height: 8),
@@ -73,7 +73,7 @@ class WhoAreWeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Image.asset("assets/images/about_team.png", fit: BoxFit.cover),
+            Image.asset("assets/images/about-us-2.png", fit: BoxFit.cover),
             const SizedBox(height: 24),
           ],
         ),

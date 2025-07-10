@@ -28,24 +28,22 @@ class ReviewList extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Avatar
                   CircleAvatar(
                     radius: 16,
                     child: Text(
                       review.username.isNotEmpty
                           ? review.username
-                          .trim()
-                          .split(' ')
-                          .map((e) => e.isNotEmpty ? e[0] : '')
-                          .take(2)
-                          .join('.')
-                          .toUpperCase()
+                              .trim()
+                              .split(' ')
+                              .map((e) => e.isNotEmpty ? e[0] : '')
+                              .take(2)
+                              .join('.')
+                              .toUpperCase()
                           : '?',
                       style: const TextStyle(fontSize: 12),
                     ),
                   ),
                   const SizedBox(width: 8),
-                  // Username and stars
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +58,7 @@ class ReviewList extends StatelessWidget {
                         Row(
                           children: List.generate(
                             5,
-                                (i) => Icon(
+                            (i) => Icon(
                               i < review.rating.round()
                                   ? Icons.star
                                   : Icons.star_border,
@@ -80,12 +78,9 @@ class ReviewList extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // Time ago
-
                 ],
               ),
               const SizedBox(height: 12),
-              // Review body
               Text(
                 review.body,
                 style: const TextStyle(
@@ -93,8 +88,8 @@ class ReviewList extends StatelessWidget {
                   color: Colors.black87,
                 ),
               ),
-              SizedBox(height: 20,),
-              Divider(color: Colors.grey[300],)
+              const SizedBox(height: 20),
+              Divider(color: Colors.grey[300]),
             ],
           ),
         );
@@ -137,7 +132,7 @@ class _AddReviewFieldState extends State<AddReviewField> {
         ),
         const SizedBox(height: 8),
         Text(
-          "كيف هو المنتج؟",
+          'product.rating.how_is_product'.tr(),
           style: TextStyle(
             fontSize: 14,
             color: Colors.grey[500],
@@ -147,8 +142,7 @@ class _AddReviewFieldState extends State<AddReviewField> {
         Consumer(
           builder: (BuildContext context, WidgetRef ref, Widget? child) {
             final rating = ref.watch(reviewRatingProvider);
-
-         return   Row(
+            return Row(
               children: List.generate(5, (index) {
                 return IconButton(
                   icon: Icon(
@@ -162,12 +156,11 @@ class _AddReviewFieldState extends State<AddReviewField> {
               }),
             );
           },
-
         ),
         const SizedBox(height: 16),
-        const Text(
-          "عنوان المراجعة",
-          style: TextStyle(
+        Text(
+          'product.rating.review_title'.tr(),
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -176,7 +169,7 @@ class _AddReviewFieldState extends State<AddReviewField> {
         TextField(
           controller: _titleController,
           decoration: InputDecoration(
-            hintText: "منتجات رائعة",
+            hintText: 'product.rating.review_title_hint'.tr(),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -187,9 +180,9 @@ class _AddReviewFieldState extends State<AddReviewField> {
           ),
         ),
         const SizedBox(height: 16),
-        const Text(
-          "مراجعة المحتوى",
-          style: TextStyle(
+        Text(
+          'product.rating.review_content'.tr(),
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: Color(0xFF4A3F5F),
@@ -200,7 +193,7 @@ class _AddReviewFieldState extends State<AddReviewField> {
           controller: _bodyController,
           maxLines: 5,
           decoration: InputDecoration(
-            hintText: "اكتب محتوى المراجعة هنا...",
+            hintText: 'product.rating.review_content_hint'.tr(),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -219,7 +212,8 @@ class _AddReviewFieldState extends State<AddReviewField> {
               final body = _bodyController.text.trim();
 
               if (title.isNotEmpty && body.isNotEmpty) {
-                _titleController.clear();}
+                _titleController.clear();
+              }
             },
             child: Text('product.send'.tr()),
           ),

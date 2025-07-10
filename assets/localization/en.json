@@ -33,17 +33,35 @@
     "total": "Total",
     "checkout": "Checkout",
     "shipping_info": "Shipping Information",
+    "shipping": "Shipping",
+    "payment": {
+      "title": "Payment",
+      "cash_on_delivery": "Cash on Delivery",
+      "electronic": "Electronic Payment",
+      "tabby": "Tabby",
+      "tamara": "Tamara",
+      "next": "Next",
+      "pay": "Pay"
+    },
+    "form": {
+      "first_name": "First Name",
+      "first_name_hint": "Enter your first name",
+      "email": "Email",
+      "email_hint": "Enter your email",
+      "street": "Street Address",
+      "street_hint": "Street name, building number...",
+      "governorate": "Governorate",
+      "governorate_hint": "e.g. Giza, Riyadh",
+      "area": "Area",
+      "area_hint": "e.g. Dokki, Al-Nakheel",
+      "phone": "Phone Number",
+      "phone_hint": "Enter phone number"
+    },
     "summary": {
       "subtotal": "Subtotal",
       "delivery": "Delivery",
       "tax": "Tax & Fees",
       "total": "Total"
-    },
-    "payment": {
-      "cash_on_delivery": "Cash on Delivery",
-      "electronic": "Electronic Payment",
-      "tabby": "Tabby",
-      "tamara": "Tamara"
     },
     "quantity": "Quantity: {count}",
     "proceed_to_payment": "Proceed to Payment"
@@ -58,11 +76,21 @@
     "upload_file": "Upload File",
     "customer_reviews": "{count} Customer Reviews",
     "recommendation": "{percent}% of subscribers recommended this",
+    "brand": {
+      "title": "Brand",
+      "name": "K&H Fringe"
+    },
+    "discount": "Discount {percent}%",
     "rating": {
       "title": "Product Rating",
       "write_review": "Write a Review",
       "great_product": "Great Product",
-      "submit": "Submit Review"
+      "submit": "Submit Review",
+      "how_is_product": "How is the product?",
+      "review_title": "Review Title",
+      "review_title_hint": "Great products",
+      "review_content": "Review Content",
+      "review_content_hint": "Write your review content here..."
     }
   },
   "profile": {
@@ -90,6 +118,16 @@
     "quotation_number": "QTN-2025-001",
     "company_quotes": "Company Quotes",
     "export": "Export",
+    "current_orders": "Current Orders",
+    "previous_orders": "Previous Orders",
+    "offer_details": "Offer Details",
+    "accept_offer": "Accept Offer",
+    "reject_offer": "Reject Offer",
+    "validity_period": "Offer Validity Period",
+    "validity_text": "This offer is valid for 7 days from the date of submission.",
+    "directed_to": "Directed To:",
+    "company_section": "🏢 Company {name}",
+    "offer_details_section": "💼 Offer Details:",
     "table": {
       "product_name": "Product Name",
       "brand_name": "Brand Name",
@@ -107,7 +145,16 @@
     "location": {
       "select_location": "Choose a location near you",
       "select_company": "Choose a shop or company",
-      "select_all": "Select all shops and companies"
+      "select_all": "Select all shops and companies",
+      "region": "Enter Region",
+      "city": "Enter City",
+      "district": "Enter District",
+      "search_company": "Search for company or shop"
+    },
+    "upload": {
+      "title": "Upload File",
+      "description": "We will provide you with everything you need at the best prices!",
+      "button": "Upload File"
     }
   },
   "errors": {

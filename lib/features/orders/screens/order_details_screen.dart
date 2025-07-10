@@ -9,11 +9,11 @@ class OrderDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final date = DateFormat('d MMMM y', 'ar').format(order.date);
+    final date = DateFormat('d MMMM y', context.locale.languageCode).format(order.date);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('orders.quotation'.tr(), style: TextStyle(color: Colors.black)),
+        title: Text('orders.quotation'.tr(), style: const TextStyle(color: Colors.black)),
         backgroundColor: Theme.of(context).colorScheme.background,
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.black),
@@ -25,47 +25,44 @@ class OrderDetailsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _sectionHeader('🏢 شركة ${order.corporationName}'),
+              _sectionHeader('orders.company_section'.tr(args: [order.corporationName])),
               const SizedBox(height: 4),
               _infoText('${tr('orders.company_info.address')}: ${order.address}'),
               _infoText('${tr('orders.company_info.phone')}: ${order.corporationPhoneNumber}'),
               _infoText('${tr('orders.company_info.email')}: support@moa.redy.com'),
               _infoText('${tr('orders.company_info.date')}: $date'),
-              _infoText('${tr('orders.quotation_number')}'),
+              _infoText(tr('orders.quotation_number')),
 
               const SizedBox(height: 24),
-              _sectionHeader('📧 موجه إلى:'),
+              _sectionHeader('orders.directed_to'.tr()),
               _infoText('${tr('orders.company_info.name')}: ${order.clientName}'),
               _infoText('${tr('orders.company_info.email')}: ${order.clientEmail}'),
 
               const SizedBox(height: 24),
-              _sectionHeader('⏰ مدة صلاحية العرض:'),
-              const Text(
-                'هذا العرض ساري لمدة 7 أيام من تاريخ الإرسال.',
-                style: TextStyle(fontSize: 15),
+              _sectionHeader('orders.validity_period'.tr()),
+              Text(
+                'orders.validity_text'.tr(),
+                style: const TextStyle(fontSize: 15),
               ),
 
               const SizedBox(height: 24),
               Row(
                 children: [
-                  _sectionHeader('💼 تفاصيل عرض السعر:'),
-                  Spacer(),
+                  _sectionHeader('orders.offer_details_section'.tr()),
+                  const Spacer(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).primaryColor,
-                      padding: const EdgeInsets.symmetric(horizontal: 24 , vertical: 6), // Equal padding = square feel
+                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4), // or 0 for hard square
+                        borderRadius: BorderRadius.circular(4),
                       ),
                     ),
                     onPressed: () {},
-                    child: Text('orders.export'.tr(), style: TextStyle(fontSize: 16)),
+                    child: Text('orders.export'.tr(), style: const TextStyle(fontSize: 16)),
                   ),
-
                 ],
               ),
-
-              const SizedBox(height: 12),
 
               const SizedBox(height: 12),
               _buildTable(),
@@ -111,8 +108,7 @@ class OrderDetailsScreen extends StatelessWidget {
       },
       children: [
         _buildTableHeader(),
-        _buildTableRow('قلب صنبور', 'شركة جدة', '50', '20 ريال', '1000 ريال'),
-        _buildTableRow('قلب صنبور', 'شركة جدة', '50', '20 ريال', '1000 ريال'),
+        _buildTableRow(order.product.name, order.product.brand, order.quantity.toString(), order.product.price, (order.product.price * order.quantity).toString()),
       ],
     );
   }
@@ -121,11 +117,11 @@ class OrderDetailsScreen extends StatelessWidget {
     return TableRow(
       decoration: BoxDecoration(color: Colors.grey[100]),
       children: [
-        Padding(padding: EdgeInsets.all(8), child: Text('orders.table.product_name'.tr(), textAlign: TextAlign.center)),
-        Padding(padding: EdgeInsets.all(8), child: Text('orders.table.brand_name'.tr(), textAlign: TextAlign.center)),
-        Padding(padding: EdgeInsets.all(8), child: Text('orders.table.quantity'.tr(), textAlign: TextAlign.center)),
-        Padding(padding: EdgeInsets.all(8), child: Text('orders.table.unit_price'.tr(), textAlign: TextAlign.center)),
-        Padding(padding: EdgeInsets.all(8), child: Text('orders.table.total_price'.tr(), textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text('orders.table.product_name'.tr(), textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text('orders.table.brand_name'.tr(), textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text('orders.table.quantity'.tr(), textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text('orders.table.unit_price'.tr(), textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text('orders.table.total_price'.tr(), textAlign: TextAlign.center)),
       ],
     );
   }
@@ -133,11 +129,11 @@ class OrderDetailsScreen extends StatelessWidget {
   TableRow _buildTableRow(String name, String brand, String quantity, String unitPrice, String totalPrice) {
     return TableRow(
       children: [
-        Padding(padding: const EdgeInsets.all(8), child: Text(order.product.name, textAlign: TextAlign.center)),
-        Padding(padding: const EdgeInsets.all(8), child: Text(order.product.brand, textAlign: TextAlign.center)),
-        Padding(padding: const EdgeInsets.all(8), child: Text("${order.quantity}", textAlign: TextAlign.center)),
-        Padding(padding: const EdgeInsets.all(8), child: Text(order.product.price, textAlign: TextAlign.center)),
-        Padding(padding: const EdgeInsets.all(8), child: Text(order.product.price * order.quantity, textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text(name, textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text(brand, textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text(quantity, textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text(unitPrice, textAlign: TextAlign.center)),
+        Padding(padding: const EdgeInsets.all(8), child: Text(totalPrice, textAlign: TextAlign.center)),
       ],
     );
   }

@@ -2,9 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mawaridii/features/products/widgets/product_grid.dart';
 import 'package:mawaridii/app/widgets/stylized_filled_button.dart';
 import 'package:mawaridii/features/orders/logic/providers/orders_provider.dart';
 import 'package:mawaridii/routes/routes.dart';
@@ -20,23 +18,21 @@ class OrdersView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 20,),
-              UploadCard(),
-              SizedBox(height: 20,),
-              OrdersTab()
-            ],
-          ),
-        )
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 20),
+            const UploadCard(),
+            const SizedBox(height: 20),
+            const OrdersTab()
+          ],
+        ),
+      )
     );
   }
 }
-
 
 class OrdersTab extends ConsumerWidget {
   const OrdersTab({super.key});
@@ -51,7 +47,7 @@ class OrdersTab extends ConsumerWidget {
           children: [
             Expanded(
               child: StylizedButton(
-                text: "الطلبات الحالية",
+                text: 'orders.current_orders'.tr(),
                 function: () => ref.read(TabProvider.notifier).state = 0,
                 buttonColor: selectedTab == 0
                     ? Theme.of(context).primaryColor
@@ -66,7 +62,7 @@ class OrdersTab extends ConsumerWidget {
             ),
             Expanded(
               child: StylizedButton(
-                text: "الطلبات السابقة",
+                text: 'orders.previous_orders'.tr(),
                 function: () => ref.read(TabProvider.notifier).state = 1,
                 buttonColor: selectedTab == 1
                     ? Theme.of(context).primaryColor
@@ -84,11 +80,14 @@ class OrdersTab extends ConsumerWidget {
         const SizedBox(height: 12),
         Row(
           children: [
-            Text('orders.company_quotes'.tr(), style: TextStyle(
+            Text(
+              'orders.company_quotes'.tr(),
+              style: const TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.bold
-                ,color: Colors.black
-            ),),
+                fontWeight: FontWeight.bold,
+                color: Colors.black
+              ),
+            ),
           ],
         ),
         if (selectedTab == 0)
@@ -99,8 +98,10 @@ class OrdersTab extends ConsumerWidget {
     );
   }
 }
+
 class OrdersListView extends StatelessWidget {
   const OrdersListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Consumer(
@@ -123,9 +124,9 @@ class OrdersListView extends StatelessWidget {
         );
       },
     );
-
   }
 }
+
 class OrderTile extends StatelessWidget {
   final Order order;
 
@@ -139,7 +140,6 @@ class OrderTile extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
-
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('${tr('orders.company_info.name')} ${order.corporationName}', style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -152,17 +152,16 @@ class OrderTile extends StatelessWidget {
           ),
           Column(
             children: [
-              _customButton("تفاصيل العرض", Colors.grey.shade300, Colors.black, (){
+              _customButton('orders.offer_details'.tr(), Colors.grey.shade300, Colors.black, () {
                 context.goNamed(
                   AppRoute.orderDetails.name,
                   extra: order,
                 );
-
               }),
               const SizedBox(height: 8),
-              _customButton("قبول العرض", Colors.green.shade100, Colors.green.shade800,(){}),
+              _customButton('orders.accept_offer'.tr(), Colors.green.shade100, Colors.green.shade800, () {}),
               const SizedBox(height: 8),
-              _customButton("رفض العرض", Colors.red.shade100, Colors.red.shade800, (){}),
+              _customButton('orders.reject_offer'.tr(), Colors.red.shade100, Colors.red.shade800, () {}),
             ],
           ),
         ],
@@ -170,12 +169,13 @@ class OrderTile extends StatelessWidget {
     );
   }
 }
+
 Widget _customButton(
-    String text,
-    Color bgColor,
-    Color textColor,
-    VoidCallback onPressed,
-    ) {
+  String text,
+  Color bgColor,
+  Color textColor,
+  VoidCallback onPressed,
+) {
   return SizedBox(
     width: 100,
     child: ElevatedButton(
