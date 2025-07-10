@@ -1,17 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:mawaridii/routes/routes.dart';
 import '../../../app/widgets/stylized_filled_button.dart';
+import '../logic/login_providers.dart';
 
-// Scoped provider that auto-disposes when screen is removed
-final _currentPageProvider = StateProvider.autoDispose<int>((ref) => 0);
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -26,15 +22,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    // Only update state when page settles
     _pageController.addListener(_onPageChange);
   }
 
   void _onPageChange() {
     if (!_pageController.position.isScrollingNotifier.value) {
       final index = _pageController.page?.round() ?? 0;
-      if (index != ref.read(_currentPageProvider)) {
-        ref.read(_currentPageProvider.notifier).state = index;
+      if (index != ref.read(currentPageProvider)) {
+        ref.read(currentPageProvider.notifier).state = index;
       }
     }
   }
@@ -77,7 +72,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 }
 
-// Split into separate widgets for better performance
 class _LoginAppBar extends ConsumerWidget {
   final PageController pageController;
   
@@ -85,7 +79,7 @@ class _LoginAppBar extends ConsumerWidget {
   
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentPage = ref.watch(_currentPageProvider);
+    final currentPage = ref.watch(currentPageProvider);
     
     return AppBar(
       title: const Text('تسجيل الدخول'),
@@ -169,7 +163,6 @@ class PhoneInputPage extends StatelessWidget {
   }
 }
 
-// Extracted phone input widget for better reusability and performance
 class _PhoneInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mawaridii/features/cart/logic/cart_provider.dart';
 import 'package:mawaridii/routes/routes.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -108,7 +109,15 @@ class ProductGrid extends ConsumerWidget {
                           padding: EdgeInsets.zero,
                           constraints: const BoxConstraints(),
                           icon: Icon(Icons.add_box, color: primaryColor, size: 32),
-                          onPressed: () {},
+                          onPressed: () {
+                            ref.read(cartProvider.notifier).addToCart(product, 1);
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('${product.name} تمت إضافته إلى السلة'),
+                                duration: const Duration(seconds: 2),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),

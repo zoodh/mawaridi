@@ -10,7 +10,7 @@ import 'package:mawaridii/features/orders/logic/providers/orders_provider.dart';
 import 'package:mawaridii/routes/routes.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-import '../../products/widgets/upload_card.dart';
+import '../widgets/upload_card.dart';
 import '../logic/providers/tab_provider.dart';
 import '../models/order.dart';
 
