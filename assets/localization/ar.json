@@ -1,0 +1,130 @@
+{
+  "hello": "مرحباً!",
+  "welcome": "مرحباً بك في تطبيقنا!",
+  "auth": {
+    "register": "إنشاء حساب",
+    "login": "تسجيل دخول",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "dont_have_account": "ليس لديك حساب؟",
+    "already_have_account": "لديك حساب بالفعل؟",
+    "sign_up": "تسجيل",
+    "sign_in": "دخول",
+    "enter_phone": "يرجى إدخال رقم هاتفك المحمول",
+    "phone_number": "رقم الهاتف",
+    "next": "التالي",
+    "enter_verification_code": "أدخل رمز التحقق",
+    "verify": "تحقق",
+    "resend_otp": "إعادة إرسال رمز التحقق؟",
+    "full_name": "الاسم بالكامل",
+    "create_account": "إنشاء الحساب"
+  },
+  "onboarding": {
+    "trusted_tools": "أدوات موثوقة من أفضل الموردين",
+    "all_in_one": "كل ما تحتاجه من الأدوات في مكان واحد",
+    "continue": "استمرار",
+    "skip": "تخطي"
+  },
+  "cart": {
+    "title": "عربة التسوق",
+    "empty": "سلة التسوق فارغة",
+    "total": "المجموع",
+    "checkout": "إتمام الشراء",
+    "shipping_info": "بيانات الشحن",
+    "summary": {
+      "subtotal": "المجموع",
+      "delivery": "التوصيل",
+      "tax": "الضرائب و الرسوم",
+      "total": "الإجمالي"
+    },
+    "payment": {
+      "cash_on_delivery": "الدفع عند الاستلام",
+      "electronic": "الدفع الالكتروني",
+      "tabby": "تابي",
+      "tamara": "تمارا"
+    },
+    "quantity": "الكمية : {count}",
+    "proceed_to_payment": "تابع للدفع"
+  },
+  "product": {
+    "details": "تفاصيل المنتج",
+    "add_to_cart": "إضافة إلى السلة",
+    "price": "السعر",
+    "description": "الوصف",
+    "send": "إرسال",
+    "discover_more": "اكتشف المزيد",
+    "upload_file": "رفع الملف",
+    "customer_reviews": "{count} رأي العملاء",
+    "recommendation": "{percent}% من المشتركين أوصى بهذا",
+    "rating": {
+      "title": "تقييم المنتج",
+      "write_review": "اكتب مراجعة",
+      "great_product": "منتج رائع",
+      "submit": "إرسال"
+    }
+  },
+  "profile": {
+    "settings": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "faq": "الاسئلة الشائعة",
+    "about_us": "من نحن",
+    "seller_account": "حساب البائع",
+    "contact_us": "تواصل معنا",
+    "change_language": "تغيير اللغة",
+    "who_are_we": "مين مواردي؟",
+    "our_story": "قصتنا"
+  },
+  "contact": {
+    "start_project": "ابدأ بتنفيذ مشروعك اليوم",
+    "address": "الرياض، حي الضباط.\nطريق الملك عبد العزيز مبنى",
+    "working_hours": "ساعات العمل",
+    "working_days": "الاحد - الخميس من 9 صباحاً - 5 مساءً",
+    "phone": "+966 9 9966 0147320",
+    "license": "License No: 1906047.01",
+    "leave_message": "اترك رسالة"
+  },
+  "orders": {
+    "quotation": "عرض السعر",
+    "quotation_number": "QTN-2025-001",
+    "company_quotes": "عرض اسعار الشركات",
+    "export": "تصدير",
+    "table": {
+      "product_name": "اسم المنتج",
+      "brand_name": "اسم الماركة",
+      "quantity": "كمية",
+      "unit_price": "سعر الوحدة",
+      "total_price": "سعر الاجمالي"
+    },
+    "company_info": {
+      "name": "اسم الشركة",
+      "date": "التاريخ",
+      "phone": "رقم التليفون",
+      "address": "العنوان",
+      "email": "البريد الإلكتروني"
+    },
+    "location": {
+      "select_location": "اختر الموقع الجغرافي بالقرب منك",
+      "select_company": "اختر المحل أو الشركة",
+      "select_all": "تحديد كل المحلات والشركات"
+    }
+  },
+  "errors": {
+    "generic": "خطأ: {error}"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "building_materials": "مواد البناء",
+    "orders": "الطلبات",
+    "cart": "العربة",
+    "settings": "الإعدادات"
+  },
+  "home": {
+    "shop_by_category": "التسوق حسب الفئة",
+    "expansion_opportunity": "فرصتك للتوسع تبدأ من هنا!",
+    "supplier_prompt": "اذا كنت مورد-اضف منتجاتك الان و ابدا البيع في دقائق",
+    "plumbing_tools": "ادوات السباكة",
+    "plumbing_subtitle": "أفضل الأدوات لتجهيز سباكة منزلك"
+  }
+}

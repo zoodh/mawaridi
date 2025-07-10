@@ -1,0 +1,130 @@
+{
+  "hello": "Hello!",
+  "welcome": "Welcome to our app!",
+  "auth": {
+    "register": "Create Account",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "forgot_password": "Forgot Password?",
+    "dont_have_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "sign_up": "Sign Up",
+    "sign_in": "Sign In",
+    "enter_phone": "Please enter your mobile number",
+    "phone_number": "Phone Number",
+    "next": "Next",
+    "enter_verification_code": "Enter verification code",
+    "verify": "Verify",
+    "resend_otp": "Resend OTP?",
+    "full_name": "Full Name",
+    "create_account": "Create Account"
+  },
+  "onboarding": {
+    "trusted_tools": "Trusted tools from the best suppliers",
+    "all_in_one": "All the tools you need in one place",
+    "continue": "Continue",
+    "skip": "Skip"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "shipping_info": "Shipping Information",
+    "summary": {
+      "subtotal": "Subtotal",
+      "delivery": "Delivery",
+      "tax": "Tax & Fees",
+      "total": "Total"
+    },
+    "payment": {
+      "cash_on_delivery": "Cash on Delivery",
+      "electronic": "Electronic Payment",
+      "tabby": "Tabby",
+      "tamara": "Tamara"
+    },
+    "quantity": "Quantity: {count}",
+    "proceed_to_payment": "Proceed to Payment"
+  },
+  "product": {
+    "details": "Product Details",
+    "add_to_cart": "Add to Cart",
+    "price": "Price",
+    "description": "Description",
+    "send": "Send",
+    "discover_more": "Discover More",
+    "upload_file": "Upload File",
+    "customer_reviews": "{count} Customer Reviews",
+    "recommendation": "{percent}% of subscribers recommended this",
+    "rating": {
+      "title": "Product Rating",
+      "write_review": "Write a Review",
+      "great_product": "Great Product",
+      "submit": "Submit Review"
+    }
+  },
+  "profile": {
+    "settings": "Settings",
+    "profile": "Profile",
+    "faq": "FAQ",
+    "about_us": "About Us",
+    "seller_account": "Seller Account",
+    "contact_us": "Contact Us",
+    "change_language": "Change Language",
+    "who_are_we": "Who are we?",
+    "our_story": "Our Story"
+  },
+  "contact": {
+    "start_project": "Start your project today",
+    "address": "Riyadh, Al-Dubbat District.\nKing Abdulaziz Road Building",
+    "working_hours": "Working Hours",
+    "working_days": "Sunday - Thursday from 9 AM - 5 PM",
+    "phone": "+966 9 9966 0147320",
+    "license": "License No: 1906047.01",
+    "leave_message": "Leave a message"
+  },
+  "orders": {
+    "quotation": "Price Quotation",
+    "quotation_number": "QTN-2025-001",
+    "company_quotes": "Company Quotes",
+    "export": "Export",
+    "table": {
+      "product_name": "Product Name",
+      "brand_name": "Brand Name",
+      "quantity": "Quantity",
+      "unit_price": "Unit Price",
+      "total_price": "Total Price"
+    },
+    "company_info": {
+      "name": "Company Name",
+      "date": "Date",
+      "phone": "Phone Number",
+      "address": "Address",
+      "email": "Email"
+    },
+    "location": {
+      "select_location": "Choose a location near you",
+      "select_company": "Choose a shop or company",
+      "select_all": "Select all shops and companies"
+    }
+  },
+  "errors": {
+    "generic": "Error: {error}"
+  },
+  "navigation": {
+    "home": "Home",
+    "building_materials": "Building Materials",
+    "orders": "Orders",
+    "cart": "Cart",
+    "settings": "Settings"
+  },
+  "home": {
+    "shop_by_category": "Shop by Category",
+    "expansion_opportunity": "Your expansion opportunity starts here!",
+    "supplier_prompt": "If you're a supplier - add your products now and start selling in minutes",
+    "plumbing_tools": "Plumbing Tools",
+    "plumbing_subtitle": "Best tools for your home plumbing setup"
+  }
+}
