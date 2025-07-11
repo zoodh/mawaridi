@@ -62,6 +62,7 @@ class OrdersTab extends ConsumerWidget {
             ),
             Expanded(
               child: StylizedButton(
+                wrapWithFraction: false ,
                 text: 'orders.previous_orders'.tr(),
                 function: () => ref.read(TabProvider.notifier).state = 1,
                 buttonColor: selectedTab == 1

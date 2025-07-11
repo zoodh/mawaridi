@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mawaridii/features/cart/logic/cart_provider.dart';
 
 class SummaryRow extends StatelessWidget {
   final String label;
@@ -37,7 +39,7 @@ class SummaryRow extends StatelessWidget {
   }
 }
 
-class CartSummary extends StatelessWidget {
+class CartSummary extends ConsumerWidget {
   final double itemsTotal;
   final double tax;
   final double deliveryFee;
@@ -52,8 +54,10 @@ class CartSummary extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final  isEmpty = ref.read(cartProvider).isEmpty;
     return Container(
+
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
         color: Colors.grey.shade100,
@@ -66,14 +70,25 @@ class CartSummary extends StatelessWidget {
         children: [
           SummaryRow(label: 'cart.summary.subtotal'.tr(), value: itemsTotal.toStringAsFixed(2)),
           const SizedBox(height: 4),
-          SummaryRow(label: 'cart.summary.delivery'.tr(), value: deliveryFee.toStringAsFixed(2)),
+          SummaryRow(label:
+          'cart.summary.delivery'.tr(),
+
+              value:
+              isEmpty ? "0" :
+              deliveryFee.toStringAsFixed(2)),
           const SizedBox(height: 4),
-          SummaryRow(label: 'cart.summary.tax'.tr(), value: tax.toStringAsFixed(2)),
+          SummaryRow(label:
+          'cart.summary.tax'.tr(),
+              value:
+              isEmpty ? "0" :
+              tax.toStringAsFixed(2)),
           const SizedBox(height: 4),
 
           SummaryRow(
             label: 'cart.summary.total'.tr(),
-            value: grandTotal.toStringAsFixed(2),
+            value:
+            isEmpty ? "0" :
+            grandTotal.toStringAsFixed(2),
             isBold: true,
             isGrandTotal: true,
           ),

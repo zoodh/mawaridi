@@ -2,7 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-
 class ImageCard extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -15,15 +14,14 @@ class ImageCard extends StatelessWidget {
     required this.subtitle,
     required this.imagePath,
     required this.onPressed,
-  }
-      );
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Container(
-        height: 160,
+        height: 180,
         width: double.infinity,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -49,29 +47,30 @@ class ImageCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              subtitle,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-            const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Colors.white),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.transparent,
-                  ),
-                  onPressed: onPressed,
-                  child: Text('product.discover_more'.tr()),
+            Expanded(
+              child: Text(
+                subtitle,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
                 ),
-              ],
+                softWrap: true,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: const BorderSide(color: Colors.white),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.transparent,
+                ),
+                onPressed: onPressed,
+                child: Text(
+                  'product.discover_more'.tr(),
+                  style: const TextStyle(fontSize: 12),
+                ),
+              ),
             ),
           ],
         ),

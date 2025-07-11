@@ -84,7 +84,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          'product.customer_reviews'.tr(args: [product.reviewCount.toString()]),
+                         "${product.reviewCount} ${'product.customer_reviews'.tr()}" ,
                           style: const TextStyle(
                             fontSize: 12,
                             color: Color(0xFF4A3A43),
@@ -133,7 +133,7 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 24),
-              QuantitySelectorWithDiscount(),
+              QuantitySelector(),
               const SizedBox(height: 24),
 
               Consumer(

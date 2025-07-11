@@ -63,7 +63,7 @@
       "tax": "Tax & Fees",
       "total": "Total"
     },
-    "quantity": "Quantity: {count}",
+    "quantity": "Quantity:",
     "proceed_to_payment": "Proceed to Payment"
   },
   "product": {
@@ -74,13 +74,13 @@
     "send": "Send",
     "discover_more": "Discover More",
     "upload_file": "Upload File",
-    "customer_reviews": "{count} Customer Reviews",
-    "recommendation": "{percent}% of subscribers recommended this",
+    "customer_reviews": "Customer Reviews",
+    "recommendation": "{of subscribers recommended this",
     "brand": {
       "title": "Brand",
       "name": "K&H Fringe"
     },
-    "discount": "Discount {percent}%",
+    "discount": "Discount",
     "rating": {
       "title": "Product Rating",
       "write_review": "Write a Review",
@@ -126,7 +126,7 @@
     "validity_period": "Offer Validity Period",
     "validity_text": "This offer is valid for 7 days from the date of submission.",
     "directed_to": "Directed To:",
-    "company_section": "🏢 Company {name}",
+    "company_section": "🏢 Company",
     "offer_details_section": "💼 Offer Details:",
     "table": {
       "product_name": "Product Name",
@@ -162,7 +162,7 @@
   },
   "navigation": {
     "home": "Home",
-    "building_materials": "Building Materials",
+    "building_materials": "Materials",
     "orders": "Orders",
     "cart": "Cart",
     "settings": "Settings"

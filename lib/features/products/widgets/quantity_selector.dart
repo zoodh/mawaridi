@@ -4,9 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import '../logic/providers/quantity_provider.dart';
+class QuantitySelector extends ConsumerWidget {
+  final bool showDiscount;
 
-class QuantitySelectorWithDiscount extends ConsumerWidget {
-  const QuantitySelectorWithDiscount({super.key});
+  const QuantitySelector({
+    super.key,
+    this.showDiscount = true,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +26,7 @@ class QuantitySelectorWithDiscount extends ConsumerWidget {
                 'product.brand.title'.tr(),
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18
+                  fontSize: 18,
                 ),
               ),
               Text(
@@ -32,14 +36,16 @@ class QuantitySelectorWithDiscount extends ConsumerWidget {
             ],
           ),
         ),
-        Text(
-          'product.discount'.tr(args: ['20']),
-          style: const TextStyle(
-            color: Colors.red,
-            fontWeight: FontWeight.bold,
+        if (showDiscount) ...[
+          Text(
+            "20% ${'product.discount'.tr()}",
+            style: const TextStyle(
+              color: Colors.red,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const SizedBox(width: 16),
+          const SizedBox(width: 16),
+        ],
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
@@ -75,4 +81,3 @@ class QuantitySelectorWithDiscount extends ConsumerWidget {
     );
   }
 }
-

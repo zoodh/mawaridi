@@ -40,7 +40,7 @@ class _OrdersApi implements IOrdersApi {
         address: "شارع ${index + 1}، القاهرة",
         clientName: "عميل ${index + 1}",
         clientEmail: "client${index + 1}@example.com",
-        product: demoProducts.first,
+         products: demoProducts,
         quantity: 1,
       ),
     );

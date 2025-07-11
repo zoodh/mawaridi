@@ -21,7 +21,7 @@ class CartView extends ConsumerWidget {
     );
     const double deliveryFee = 10.0;
     const double tax = 20.0;
-    double grandTotal = itemsTotal + deliveryFee + tax;
+    final double grandTotal = itemsTotal + deliveryFee + tax;
 
     return Scaffold(
       appBar: AppBar(
@@ -35,6 +35,7 @@ class CartView extends ConsumerWidget {
         itemBuilder: (context, index) {
           final item = cartItems[index];
           final product = item.product;
+
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Stack(
@@ -50,6 +51,7 @@ class CartView extends ConsumerWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      // Product Info
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,17 +72,54 @@ class CartView extends ConsumerWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              'cart.quantity'.tr(args: ['${item.quantity}']),
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            const SizedBox(height: 8),
+                            // Quantity selector
+                            Row(
+                              children: [
+                                Text(
+                                  'cart.quantity'.tr(),
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFF5F5F5),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          final newQty = item.quantity - 1;
+                                          ref.read(cartProvider.notifier).changeQuantity(product.id, newQty);
+                                        },
+                                        child: const Icon(Icons.remove, size: 18, color: Colors.black54),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        item.quantity.toString(),
+                                        style: const TextStyle(fontSize: 16),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      GestureDetector(
+                                        onTap: () {
+                                          ref.read(cartProvider.notifier).changeQuantity(product.id, item.quantity + 1);
+                                        },
+                                        child: const Icon(Icons.add, size: 18, color: Colors.black54),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
                       ),
+                      // Product Image
                       Image.asset(
                         product.imagePath,
                         width: 100,
@@ -90,6 +129,7 @@ class CartView extends ConsumerWidget {
                     ],
                   ),
                 ),
+                // Delete icon
                 Positioned(
                   top: 0,
                   left: -10,

@@ -5,7 +5,7 @@ import 'package:mawaridii/features/cart/screens/checkout_screen.dart';
 import 'package:mawaridii/features/orders/models/order.dart';
 import 'package:mawaridii/features/orders/screens/upload_file_screen.dart';
 import 'package:mawaridii/features/profile/screens/contact_us_screen.dart';
-import 'package:mawaridii/features/profile/screens/who_are_we_screen.dart';
+import 'package:mawaridii/features/profile/screens/about_us.dart';
 
 import '../app/screens/base_screen.dart';
 import '../app/screens/home_screen.dart';

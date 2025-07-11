@@ -74,12 +74,12 @@ class ProfileView extends StatelessWidget {
             leading: buildIconContainer(Icons.language),
             title: Text('profile.change_language'.tr()),
             onTap: () {
-            //  final currentLocale = context.locale;
-           //   if (currentLocale.languageCode == 'en') {
-           //     context.setLocale(const Locale('ar'));
-          //    } else {
-            //    context.setLocale(const Locale('en'));
-       //       }
+             final currentLocale = context.locale;
+             if (currentLocale.languageCode == 'en') {
+               context.setLocale(const Locale('ar'));
+            } else {
+              context.setLocale(const Locale('en'));
+            }
             },
           ),
         ],

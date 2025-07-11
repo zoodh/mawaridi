@@ -22,10 +22,10 @@
     "create_account": "إنشاء حساب"
   },
   "onboarding": {
-    "trusted_tools": "Trusted tools from the best suppliers",
-    "all_in_one": "All the tools you need in one place",
-    "continue": "Continue",
-    "skip": "Skip"
+    "trusted_tools": "أدوات موثوقة من أفضل الموردين",
+    "all_in_one": "كل الأدوات التي تحتاجها في مكان واحد",
+    "continue": "استمرار",
+    "skip": "تخطي"
   },
   "cart": {
     "title": "سلة التسوق",
@@ -59,11 +59,12 @@
     },
     "summary": {
       "subtotal": "المجموع الفرعي",
-      "delivery": "التوصيل",
+      "delivery": "رسوم التوصيل",
       "tax": "الضرائب والرسوم",
       "total": "المجموع الكلي"
     },
-    "proceed_to_payment": "المتابعة للدفع"
+    "proceed_to_payment": "المتابعة للدفع",
+    "quantity": "الكمية: {count}"
   },
   "product": {
     "details": "تفاصيل المنتج",
@@ -73,13 +74,13 @@
     "send": "إرسال",
     "discover_more": "اكتشف المزيد",
     "upload_file": "رفع ملف",
-    "customer_reviews": "{count} تقييمات العملاء",
-    "recommendation": "{percent}% من المشتركين أوصوا بهذا",
+    "customer_reviews": " تقييمات العملاء",
+    "recommendation": " من المشتركين أوصوا بهذا",
     "brand": {
       "title": "العلامة التجارية",
       "name": "كهف اند كيه فرينج"
     },
-    "discount": "خصم {percent}%",
+    "discount": "خصم",
     "rating": {
       "title": "تقييم المنتج",
       "write_review": "اكتب تقييماً",
@@ -88,29 +89,29 @@
       "how_is_product": "كيف هو المنتج؟",
       "review_title": "عنوان المراجعة",
       "review_title_hint": "منتجات رائعة",
-      "review_content": "مراجعة المحتوى",
+      "review_content": "محتوى المراجعة",
       "review_content_hint": "اكتب محتوى المراجعة هنا..."
     }
   },
   "profile": {
-    "settings": "Settings",
-    "profile": "Profile",
-    "faq": "FAQ",
-    "about_us": "About Us",
-    "seller_account": "Seller Account",
-    "contact_us": "Contact Us",
-    "change_language": "Change Language",
-    "who_are_we": "Who are we?",
-    "our_story": "Our Story"
+    "settings": "الإعدادات",
+    "profile": "الملف الشخصي",
+    "faq": "الأسئلة الشائعة",
+    "about_us": "من نحن",
+    "seller_account": "حساب البائع",
+    "contact_us": "اتصل بنا",
+    "change_language": "تغيير اللغة",
+    "who_are_we": "من نحن؟",
+    "our_story": "قصتنا"
   },
   "contact": {
-    "start_project": "Start your project today",
-    "address": "Riyadh, Al-Dubbat District.\nKing Abdulaziz Road Building",
-    "working_hours": "Working Hours",
-    "working_days": "Sunday - Thursday from 9 AM - 5 PM",
+    "start_project": "ابدأ مشروعك اليوم",
+    "address": "الرياض، حي الضباط\nطريق الملك عبدالعزيز، المبنى",
+    "working_hours": "ساعات العمل",
+    "working_days": "الأحد - الخميس من 9 صباحًا إلى 5 مساءً",
     "phone": "+966 9 9966 0147320",
-    "license": "License No: 1906047.01",
-    "leave_message": "Leave a message"
+    "license": "رقم الترخيص: 1906047.01",
+    "leave_message": "اترك رسالة"
   },
   "orders": {
     "quotation": "عرض السعر",
@@ -148,29 +149,29 @@
       "region": "أدخل المنطقة",
       "city": "أدخل المدينة",
       "district": "أدخل الحي",
-      "search_company": "بحث عن الشركة أو محل"
+      "search_company": "ابحث عن شركة أو متجر"
     },
     "upload": {
       "title": "رفع الملف",
-      "description": "و سنقدم لك كل ما تحتاجه بافضل الاسعار!",
+      "description": "سنقدم لك كل ما تحتاجه بأفضل الأسعار!",
       "button": "رفع الملف"
     }
   },
   "errors": {
-    "generic": "Error: {error}"
+    "generic": "خطأ: {error}"
   },
   "navigation": {
-    "home": "Home",
-    "building_materials": "Building Materials",
-    "orders": "Orders",
-    "cart": "Cart",
-    "settings": "Settings"
+    "home": "الرئيسية",
+    "building_materials": "مواد البناء",
+    "orders": "الطلبات",
+    "cart": "عربة التسوق",
+    "settings": "الإعدادات"
   },
   "home": {
-    "shop_by_category": "Shop by Category",
-    "expansion_opportunity": "Your expansion opportunity starts here!",
-    "supplier_prompt": "If you're a supplier - add your products now and start selling in minutes",
-    "plumbing_tools": "Plumbing Tools",
-    "plumbing_subtitle": "Best tools for your home plumbing setup"
+    "shop_by_category": "تسوق حسب الفئة",
+    "expansion_opportunity": "فرصتك للتوسع تبدأ من هنا!",
+    "supplier_prompt": "إذا كنت مورّدًا - أضف منتجاتك الآن وابدأ البيع خلال دقائق",
+    "plumbing_tools": "أدوات السباكة",
+    "plumbing_subtitle": "أفضل الأدوات لتركيب السباكة في منزلك"
   }
 }

@@ -3,7 +3,7 @@ class Order {
   final String corporationName;
   final int quantity;
   final DateTime date;
-  final Product product;
+  final List<Product> products;
   final String corporationPhoneNumber;
   final String address;
   final String clientName;
@@ -13,7 +13,7 @@ class Order {
     required this.corporationName,
     required this.quantity,
     required this.date,
-    required this.product,
+    required this.products,
     required this.corporationPhoneNumber,
     required this.address,
     required this.clientName,
@@ -25,7 +25,9 @@ class Order {
       corporationName: json['corporationName'] ?? '',
       quantity: json['quantity'] ?? 0,
       date: DateTime.tryParse(json['date'] ?? '') ?? DateTime.now(),
-      product: Product.fromJson(json['product'] ?? {}),
+      products: (json['products'] as List<dynamic>? ?? [])
+          .map((item) => Product.fromJson(item))
+          .toList(),
       corporationPhoneNumber: json['corporationPhoneNumber'] ?? '',
       address: json['address'] ?? '',
       clientName: json['clientName'] ?? '',
@@ -38,7 +40,7 @@ class Order {
       'corporationName': corporationName,
       'quantity': quantity,
       'date': date.toIso8601String(),
-      'product': product.toJson(),
+      'products': products.map((p) => p.toJson()).toList(),
       'corporationPhoneNumber': corporationPhoneNumber,
       'address': address,
       'clientName': clientName,

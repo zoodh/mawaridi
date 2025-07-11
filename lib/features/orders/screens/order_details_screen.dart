@@ -10,11 +10,12 @@ class OrderDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final date = DateFormat('d MMMM y', context.locale.languageCode).format(order.date);
+    final totalAmount = _calculateTotalAmount();
 
     return Scaffold(
       appBar: AppBar(
         title: Text('orders.quotation'.tr(), style: const TextStyle(color: Colors.black)),
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
@@ -25,7 +26,7 @@ class OrderDetailsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _sectionHeader('orders.company_section'.tr(args: [order.corporationName])),
+              _sectionHeader('orders.company_section'.tr()),
               const SizedBox(height: 4),
               _infoText('${tr('orders.company_info.address')}: ${order.address}'),
               _infoText('${tr('orders.company_info.phone')}: ${order.corporationPhoneNumber}'),
@@ -66,11 +67,33 @@ class OrderDetailsScreen extends StatelessWidget {
 
               const SizedBox(height: 12),
               _buildTable(),
+              
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${tr('orders.table.total_price')}: $totalAmount',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  String _calculateTotalAmount() {
+    double total = 0;
+    for (var product in order.products) {
+      total += (double.tryParse(product.price) ?? 0) * order.quantity;
+    }
+    return total.toStringAsFixed(2);
   }
 
   Widget _sectionHeader(String title) {
@@ -108,7 +131,13 @@ class OrderDetailsScreen extends StatelessWidget {
       },
       children: [
         _buildTableHeader(),
-        _buildTableRow(order.product.name, order.product.brand, order.quantity.toString(), order.product.price, (order.product.price * order.quantity).toString()),
+        ...order.products.map((product) => _buildTableRow(
+          product.name,
+          product.brand,
+          order.quantity.toString(),
+          product.price,
+          (double.tryParse(product.price) ?? 0 * order.quantity).toStringAsFixed(2),
+        )).toList(),
       ],
     );
   }
