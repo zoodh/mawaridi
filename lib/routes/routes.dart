@@ -12,6 +12,7 @@ import '../app/screens/home_screen.dart';
 import '../features/authentication/screens/login_screen.dart';
 import '../features/authentication/screens/registration_screen.dart';
 import '../features/authentication/screens/welcome_screen.dart';
+import '../features/cart/models/cart_item.dart';
 import '../features/cart/screens/cart_view.dart';
 import '../features/orders/screens/order_details_screen.dart';
 import '../features/products/models/product.dart';
@@ -31,7 +32,7 @@ enum AppRoute {
   cart,
   checkout,
   commonQuestions,
-  whoAreWe,
+  aboutUs,
   contactUs,
   uploadFile,
 }
@@ -65,7 +66,7 @@ extension AppRouteExtension on AppRoute {
         return 'order';
       case AppRoute.commonQuestions:
         return'commonquestions';
-      case AppRoute.whoAreWe:
+      case AppRoute.aboutUs:
         return'whoarewe';
       case AppRoute.uploadFile:
         return 'uploadfile';
@@ -149,11 +150,15 @@ final GoRouter appRouter = GoRouter(
         GoRoute(
           path: AppRoute.checkout.path,
           name: AppRoute.checkout.name,
-          pageBuilder: (context, state) => FadeTransitionPage(
-            key: ValueKey('${AppRoute.checkout.name}_${state.matchedLocation}'),
-            child: CheckOutScreen(),
-          ),
+          pageBuilder: (context, state) {
+            final cartItems = state.extra as List<CartItem>;
+            return FadeTransitionPage(
+              key: ValueKey('${AppRoute.checkout.name}_${state.matchedLocation}'),
+              child: CheckOutScreen(cartItems: cartItems),
+            );
+          },
         ),
+
         GoRoute(
           path: AppRoute.commonQuestions.path,
           name: AppRoute.commonQuestions.name,
@@ -163,10 +168,10 @@ final GoRouter appRouter = GoRouter(
           ),
         ),
         GoRoute(
-          path: AppRoute.whoAreWe.path,
-          name: AppRoute.whoAreWe.name,
+          path: AppRoute.aboutUs.path,
+          name: AppRoute.aboutUs.name,
           pageBuilder: (context, state) => FadeTransitionPage(
-            key: ValueKey('${AppRoute.whoAreWe.name}_${state.matchedLocation}'),
+            key: ValueKey('${AppRoute.aboutUs.name}_${state.matchedLocation}'),
             child: WhoAreWeScreen(),
           ),
         ),

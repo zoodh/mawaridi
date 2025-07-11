@@ -137,7 +137,7 @@ class OrderDetailsScreen extends StatelessWidget {
           order.quantity.toString(),
           product.price,
           (double.tryParse(product.price) ?? 0 * order.quantity).toStringAsFixed(2),
-        )).toList(),
+        ))
       ],
     );
   }

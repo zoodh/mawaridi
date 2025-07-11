@@ -51,7 +51,7 @@ class ProfileView extends StatelessWidget {
             title: Text('profile.about_us'.tr()),
             trailing: const Icon(Icons.arrow_forward_ios_rounded),
             onTap: () {
-              context.goNamed(AppRoute.whoAreWe.name);
+              context.goNamed(AppRoute.aboutUs.name);
             },
           ),
           ListTile(

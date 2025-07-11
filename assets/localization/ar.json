@@ -31,7 +31,7 @@
     "title": "سلة التسوق",
     "added_success": "تمت إضافة المنتج إلى السلة بنجاح",
     "empty_warning": "يرجى إضافة منتجات إلى السلة أولاً",
-    "empty_checkout": "Please add products before you checkout!",
+    "empty_checkout": "يرجى إضافة منتجات إلى السلة أولاً !",
     "empty": "سلة التسوق فارغة",
     "total": "المجموع",
     "checkout": "الدفع",
@@ -86,9 +86,7 @@
     },
 
 
-    "search":{
-  "label": "ابحث عن منتج"
-},
+
     "discount": "خصم",
     "rating": {
       "title": "تقييم المنتج",
@@ -104,6 +102,9 @@
   },
   "currency": {
     "sar": "ر.س"
+  },
+  "search":{
+    "label": "ابحث عن منتج"
   },
 
   "profile": {

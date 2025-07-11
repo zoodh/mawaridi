@@ -1,12 +1,9 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:mawaridii/app/widgets/category_grid.dart';
 import 'package:mawaridii/features/products/widgets/product_grid.dart';
 import 'package:mawaridii/app/widgets/search_bar.dart';
 import 'package:mawaridii/features/orders/widgets/upload_card.dart';
-import '../../../app/widgets/image_card.dart';
 
 class ProductsView extends StatelessWidget {
   const ProductsView({super.key});

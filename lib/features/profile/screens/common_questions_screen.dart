@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CommonQuestionsScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class CommonQuestionsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("الاسئلة الشائعة",),
+        title: Text('profile.faq'.tr()),
         centerTitle: true,
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,

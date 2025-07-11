@@ -1,9 +1,6 @@
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../logic/providers/quantity_provider.dart';
 import '../models/review.dart';
 
 class RatingSummaryCard extends StatelessWidget {

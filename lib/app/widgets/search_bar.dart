@@ -1,5 +1,7 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
 
@@ -9,7 +11,7 @@ class CustomSearchBar extends StatelessWidget {
       height: 40,
       child: TextField(
         decoration: InputDecoration(
-          hintText: "ابحث عن منتج",
+          hintText: 'search.label'.tr(),
           suffixIcon: Padding(
             padding: const EdgeInsets.only(right: 8),
             child: Icon(Icons.search),

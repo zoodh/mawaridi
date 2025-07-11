@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mawaridii/app/logic/remote_client_provider.dart';
 import 'package:mawaridii/features/authentication/models/login_request.dart';
 import 'package:mawaridii/features/authentication/models/registriation_request.dart';
-
 import '../models/user.dart';
 final authApiProvider = Provider<IAuthApi>((ref) => _AuthApi(ref));
 

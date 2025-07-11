@@ -1,17 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mawaridii/app/logic/bottom_navigation_provider.dart';
+import 'package:mawaridii/features/cart/logic/cart_provider.dart';
 import 'package:mawaridii/features/cart/logic/next_step_provider.dart';
 import 'package:mawaridii/routes/routes.dart';
-
 import '../../../app/widgets/stylized_filled_button.dart';
+import '../models/cart_item.dart';
 
 class CheckOutScreen extends ConsumerWidget {
-  const CheckOutScreen({super.key});
-
+  final List<CartItem> cartItems; //because we are going to eventually need it
+  const CheckOutScreen({super.key, required this.cartItems});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final primaryColor = Theme.of(context).primaryColor;
@@ -109,6 +108,8 @@ class CheckOutScreen extends ConsumerWidget {
                   if (!isNextStep) {
                     ref.read(nextStepProvider.notifier).state = true;
                   } else {
+                    ref.read(cartProvider.notifier).clearCart();
+                    //temp until we get bill/true checkout screen ui
                     context.goNamed(AppRoute.home.name);
                   }
                 },

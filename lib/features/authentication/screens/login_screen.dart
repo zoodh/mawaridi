@@ -152,6 +152,7 @@ class PhoneInputPage extends StatelessWidget {
                   duration: const Duration(milliseconds: 400),
                   curve: Curves.easeInOut,
                 );
+                Future.delayed(Duration(milliseconds: 200));
               },
               child: Text('auth.next'.tr()),
             ),
@@ -252,7 +253,6 @@ class OtpPage extends StatelessWidget {
   }
 }
 
-// Extracted OTP input widget for better reusability
 class _OtpInput extends StatelessWidget {
   final Function(String) onCompleted;
 

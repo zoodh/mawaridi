@@ -156,8 +156,9 @@ class CartView extends ConsumerWidget {
             :'cart.empty_checkout'.tr(),
             function: () {
               if(cartItems.isNotEmpty) {
-                context.goNamed(AppRoute.checkout.name);
-              }else {
+                context.goNamed(AppRoute.checkout.name, extra: cartItems);
+              }
+              else {
                 null;
               }
               },
