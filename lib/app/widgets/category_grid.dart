@@ -1,10 +1,10 @@
 
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mawaridii/features/products/logic/providers/products_provider.dart';
-
 import '../../features/products/models/category.dart';
+
 class CategoryGrid extends ConsumerWidget {
   final List<Category> categories;
   final bool isCircular;
@@ -17,7 +17,8 @@ class CategoryGrid extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final allCategory = const Category(name: 'الكل', imagePath: 'assets/images/all-category.png');
+    final allCategory = const Category
+      (nameKey: 'category.all', imagePath: 'assets/images/all-category.png', id: 0);
     final displayCategories = [allCategory, ...categories];
 
     return Padding(
@@ -35,11 +36,11 @@ class CategoryGrid extends ConsumerWidget {
               children: [
                 InkWell(
                   onTap: (){
-    if (category == allCategory) {
+    if (category.id == 0) {
       ref.read(fetchProductsProvider.notifier).fetchProducts();
     }else{
       ref.read(fetchProductsProvider.notifier).fetchProductsByCategory(
-          category.name);
+          category.id);
     }
 
     },
@@ -65,7 +66,7 @@ class CategoryGrid extends ConsumerWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  category.name,
+                  category.nameKey.tr(),
                   style: const TextStyle(fontSize: 10),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -78,11 +79,31 @@ class CategoryGrid extends ConsumerWidget {
   }
 }
 
-
 const List<Category> sampleCategories = [
-  Category(name: 'الادوات الصحية', imagePath: 'assets/images/category-8.png'),
-  Category(name: 'مواد البناء', imagePath: 'assets/images/category-4.png'),
-  Category(name: 'الادوات الكهربية', imagePath: 'assets/images/category-3.png'),
-  Category(name: 'دهانات', imagePath: 'assets/images/category-5.png'),
-  Category(name: 'عوازل', imagePath: 'assets/images/category-6.png'),
+  Category(
+    id: 1,
+    nameKey: 'category.plumbing',
+    imagePath: 'assets/images/category-8.png',
+  ),
+  Category(
+    id: 2,
+    nameKey: 'category.construction',
+    imagePath: 'assets/images/category-4.png',
+  ),
+  Category(
+    id: 3,
+    nameKey: 'category.electrical',
+    imagePath: 'assets/images/category-3.png',
+  ),
+  Category(
+    id: 4,
+    nameKey: 'category.paints',
+    imagePath: 'assets/images/category-5.png',
+  ),
+  Category(
+    id: 5,
+    nameKey: 'category.insulation',
+    imagePath: 'assets/images/category-6.png',
+  ),
 ];
+

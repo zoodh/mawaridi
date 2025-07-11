@@ -4,9 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:mawaridii/app/widgets/stylized_filled_button.dart';
 import 'package:mawaridii/routes/routes.dart';
 import 'package:easy_localization/easy_localization.dart';
-
-import '../../products/widgets/product_grid.dart';
-import '../../products/models/product.dart';
 import '../logic/cart_provider.dart';
 import '../widgets/summary_widgets.dart';
 class CartView extends ConsumerWidget {
@@ -66,14 +63,13 @@ class CartView extends ConsumerWidget {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              '${product.price} ر.س',
+                              '${product.price} ${'currency.sar'.tr()}',
                               style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             const SizedBox(height: 8),
-                            // Quantity selector
                             Row(
                               children: [
                                 Text(
@@ -155,11 +151,19 @@ class CartView extends ConsumerWidget {
             grandTotal: grandTotal,
           ),
           StylizedButton(
-            text: 'cart.proceed_to_payment'.tr(),
+            text: cartItems.isNotEmpty ?
+            'cart.proceed_to_payment'.tr()
+            :'cart.empty_checkout'.tr(),
             function: () {
-              context.goNamed(AppRoute.checkout.name);
-            },
-            buttonColor: Theme.of(context).primaryColor,
+              if(cartItems.isNotEmpty) {
+                context.goNamed(AppRoute.checkout.name);
+              }else {
+                null;
+              }
+              },
+            buttonColor:
+            cartItems.isNotEmpty ?
+            Theme.of(context).primaryColor: Colors.grey,
             textColor: Colors.white,
             isBottomSheet: true,
           ),

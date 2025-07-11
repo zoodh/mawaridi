@@ -12,7 +12,7 @@ import '../app/screens/home_screen.dart';
 import '../features/authentication/screens/login_screen.dart';
 import '../features/authentication/screens/registration_screen.dart';
 import '../features/authentication/screens/welcome_screen.dart';
-import '../features/cart/screens/cart_screen.dart';
+import '../features/cart/screens/cart_view.dart';
 import '../features/orders/screens/order_details_screen.dart';
 import '../features/products/models/product.dart';
 import '../features/products/screens/product_details_screen.dart';

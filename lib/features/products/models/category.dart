@@ -1,9 +1,11 @@
 class Category {
-  final String name;
+  final int id;
+  final String nameKey;
   final String imagePath;
 
   const Category({
-    required this.name,
+    required this.id,
+    required this.nameKey,
     required this.imagePath,
   });
 }

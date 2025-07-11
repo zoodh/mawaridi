@@ -1,6 +1,19 @@
 {
   "hello": "Hello!",
   "welcome": "Welcome to our app!",
+
+  "currency": {
+    "sar": "SAR"
+  },
+
+  "category": {
+    "all": "All",
+    "plumbing": "Plumbing",
+    "construction": "Construction Materials",
+    "electrical": "Electrical Tools",
+    "paints": "Paints",
+    "insulation": "Insulation"
+  },
   "auth": {
     "register": "Create Account",
     "login": "Login",
@@ -30,6 +43,9 @@
   "cart": {
     "title": "Shopping Cart",
     "empty": "Your cart is empty",
+    "added_success": "Product added to cart successfully",
+    "empty_warning": "Please add products to your cart first",
+    "empty_checkout": "Please add products before you checkout!",
     "total": "Total",
     "checkout": "Checkout",
     "shipping_info": "Shipping Information",
@@ -76,7 +92,7 @@
     "no_products_to_show": "No Products to Show in This Category",
     "upload_file": "Upload File",
     "customer_reviews": "Customer Reviews",
-    "recommendation": "{of subscribers recommended this",
+    "recommendation": "of subscribers recommended this",
     "brand": {
       "title": "Brand",
       "name": "K&H Fringe"
@@ -92,6 +108,9 @@
       "review_title_hint": "Great products",
       "review_content": "Review Content",
       "review_content_hint": "Write your review content here..."
+    },
+    "search":{
+      "label": "Search For A Product"
     }
   },
   "profile": {

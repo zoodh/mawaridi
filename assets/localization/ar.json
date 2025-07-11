@@ -29,6 +29,9 @@
   },
   "cart": {
     "title": "سلة التسوق",
+    "added_success": "تمت إضافة المنتج إلى السلة بنجاح",
+    "empty_warning": "يرجى إضافة منتجات إلى السلة أولاً",
+    "empty_checkout": "Please add products before you checkout!",
     "empty": "سلة التسوق فارغة",
     "total": "المجموع",
     "checkout": "الدفع",
@@ -81,6 +84,11 @@
       "title": "العلامة التجارية",
       "name": "كهف اند كيه فرينج"
     },
+
+
+    "search":{
+  "label": "ابحث عن منتج"
+},
     "discount": "خصم",
     "rating": {
       "title": "تقييم المنتج",
@@ -94,6 +102,10 @@
       "review_content_hint": "اكتب محتوى المراجعة هنا..."
     }
   },
+  "currency": {
+    "sar": "ر.س"
+  },
+
   "profile": {
     "settings": "الإعدادات",
     "profile": "الملف الشخصي",
@@ -104,6 +116,14 @@
     "change_language": "تغيير اللغة",
     "who_are_we": "من نحن؟",
     "our_story": "قصتنا"
+  },
+  "category": {
+    "all": "الكل",
+    "plumbing": "ادوات صحية",
+    "construction": "مواد البناء",
+    "electrical": "ادوات كهربية",
+    "paints": "دهانات",
+    "insulation": "عوازل"
   },
   "contact": {
     "start_project": "ابدأ مشروعك اليوم",

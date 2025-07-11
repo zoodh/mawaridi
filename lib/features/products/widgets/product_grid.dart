@@ -103,7 +103,7 @@ class ProductGrid extends ConsumerWidget {
                                 fit: BoxFit.scaleDown,
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  "${product.price} ر.س",
+                                  "${product.price} ${'currency.sar'.tr()}",
                                   style: TextStyle(
                                     fontSize: 18,
                                     color: primaryColor,
@@ -123,7 +123,7 @@ class ProductGrid extends ConsumerWidget {
                             ref.read(cartProvider.notifier).addToCart(product, 1);
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text('${product.name} تمت إضافته إلى السلة'),
+                                content: Text('${product.name} ${'cart.added_success'.tr()}'),
                                 duration: const Duration(seconds: 2),
                               ),
                             );

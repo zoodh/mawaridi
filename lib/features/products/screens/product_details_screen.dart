@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:mawaridii/features/cart/logic/cart_provider.dart';
 import 'package:mawaridii/features/products/logic/providers/quantity_provider.dart';
 import '../../../app/widgets/stylized_filled_button.dart';
-import '../../../routes/routes.dart';
 import '../models/product.dart';
 import '../models/review.dart';
 import '../widgets/quantity_selector.dart';
@@ -124,7 +122,7 @@ class ProductDetailsScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'product.recommendation'.tr(args: ['93']),
+                  "${product.reviewCount} ${'product.recommendation'.tr()}" ,
                   style: const TextStyle(
                     fontSize: 12,
                     color: Colors.green,
@@ -144,7 +142,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       ref.read(cartProvider.notifier).addToCart(product, ref.read(quantityProvider));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text('تمت إضافة المنتج إلى السلة بنجاح'),
+                          content: Text('cart.added_success'.tr()),
                           duration: const Duration(seconds: 2),
                           behavior: SnackBarBehavior.floating,
                         ),

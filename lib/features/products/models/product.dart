@@ -7,7 +7,7 @@ class Product {
   final List<String> galleryImages;
   final String price;
   final String brand;
-  final String category;
+  final int categoryId;
   final double rating;
   final int stock;
   final int reviewCount;
@@ -21,7 +21,7 @@ class Product {
     required this.brand,
     required this.galleryImages,
     required this.price,
-    required this.category,
+    required this.categoryId,
     required this.rating,
     required this.stock,
     required this.reviewCount,
@@ -44,7 +44,7 @@ class Product {
       'brand': brand,
       'galleryImages': galleryImages,
       'price': price,
-      'category': category,
+      'categoryId': categoryId,
       'rating': rating,
       'stock': stock,
       'reviewCount': reviewCount,
@@ -61,7 +61,7 @@ class Product {
       brand: json['brand'] ?? '',
       galleryImages: List<String>.from(json['galleryImages'] ?? []),
       price: json['price'] ?? '0.0',
-      category: json['category'] ?? '',
+      categoryId: json['categoryId'] ?? 0,
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       stock: json['stock'] ?? 0,
       reviewCount: json['reviewCount'] ?? 0,

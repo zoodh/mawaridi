@@ -23,10 +23,10 @@ class ProductsNotifier extends AsyncNotifier<List<Product>> {
 
   }
 
-  Future<void> fetchProductsByCategory(String category) async {
+  Future<void> fetchProductsByCategory(int categoryId) async {
     state = const AsyncLoading();
     await Future.delayed(const Duration(milliseconds: 200));
-      final products = await _api.fetchProductsByCategory(category);
+      final products = await _api.fetchProductsByCategory(categoryId);
       state = AsyncData(products);
 
   }
