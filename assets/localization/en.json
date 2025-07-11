@@ -73,6 +73,7 @@
     "description": "Description",
     "send": "Send",
     "discover_more": "Discover More",
+    "no_products_to_show": "No Products to Show in This Category",
     "upload_file": "Upload File",
     "customer_reviews": "Customer Reviews",
     "recommendation": "{of subscribers recommended this",

@@ -8,6 +8,8 @@ class CustomBottomNav extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final _ = context.locale;
+
     final currentIndex = ref.watch(currentIndexProvider);
 
     final icons = [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Todo Load images here once they confirmed to be permanent
 class AssetManager {
   static const _assets = {
     'onboarding': [
@@ -24,7 +24,7 @@ class AssetManager {
       ]);
     } catch (e) {
       debugPrint('Error preloading assets: $e');
-      // You might want to handle this error differently
+
     }
   }
 } 

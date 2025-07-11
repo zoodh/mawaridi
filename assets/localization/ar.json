@@ -64,7 +64,7 @@
       "total": "المجموع الكلي"
     },
     "proceed_to_payment": "المتابعة للدفع",
-    "quantity": "الكمية: {count}"
+    "quantity": "الكمية:"
   },
   "product": {
     "details": "تفاصيل المنتج",
@@ -73,6 +73,7 @@
     "description": "الوصف",
     "send": "إرسال",
     "discover_more": "اكتشف المزيد",
+    "no_products_to_show": "لا يوجد منتجات في هذه الفئة",
     "upload_file": "رفع ملف",
     "customer_reviews": " تقييمات العملاء",
     "recommendation": " من المشتركين أوصوا بهذا",

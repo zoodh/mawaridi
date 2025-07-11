@@ -33,7 +33,17 @@ class ProductGrid extends ConsumerWidget {
 
     return state.when(
       data: (products) {
-        return GridView.count(
+        return 
+         products.isEmpty  ?
+
+             Center(
+               child:  Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child:Text('product.no_products_to_show'.tr())
+               ),
+             )
+             :
+          GridView.count(
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
