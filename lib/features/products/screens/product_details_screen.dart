@@ -7,6 +7,7 @@ import '../../../app/widgets/stylized_filled_button.dart';
 import '../models/product.dart';
 import '../models/review.dart';
 import '../widgets/quantity_selector.dart';
+import '../widgets/rating_breakdown.dart';
 import '../widgets/review_card.dart';
 import '../widgets/review_list.dart';
 
