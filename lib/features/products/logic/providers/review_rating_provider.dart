@@ -1,10 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import '../../models/review.dart';
-
-final reviewRatingProvider = StateProvider<double>((ref) => 5.0);
-
-
+final reviewRatingProvider = StateProvider.family<double, String>((ref, reviewId) {
+  return 5.0;
+});
 final averageRatingProvider = Provider.family<double, List<Review>>((ref, reviews) {
   if (reviews.isEmpty) return 0.0;
   final total = reviews.fold<double>(0.0, (sum, r) => sum + r.rating);

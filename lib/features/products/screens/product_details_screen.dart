@@ -6,6 +6,7 @@ import 'package:mawaridii/features/products/logic/providers/quantity_provider.da
 import '../../../app/widgets/stylized_filled_button.dart';
 import '../models/product.dart';
 import '../models/review.dart';
+import '../widgets/add_review_field.dart';
 import '../widgets/quantity_selector.dart';
 import '../widgets/rating_breakdown.dart';
 import '../widgets/review_card.dart';
@@ -172,7 +173,7 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
       ReviewList(reviews: reviews),
               SizedBox(height: 10,),
-                  AddReviewField(onSubmit: (String title, String body, double rating) {  },)
+                  AddReviewField(onSubmit: (String title, String body, double rating) {  }, productId: product.id,)
             ],
           ),
         ),
